@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Vérifiez votre email - Proxyo</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-rounded-solid/css/uicons-rounded-solid.css">
+    <style type="text/css">
+        /* Reset */
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { margin: 0; padding: 0; }
+        img { -ms-interpolation-mode: bicubic; border: 0; outline: none; }
+        body { margin: 0 !important; padding: 0 !important; background-color: #e8e8e8; }
+
+        /* Links */
+        a { color: #7e3285; text-decoration: none; }
+
+        /* Responsive */
+        @media screen and (max-width: 600px) {
+            .email-wrapper { width: 100% !important; }
+            .email-container { width: 100% !important; }
+            .big-title { font-size: 36px !important; line-height: 1.1 !important; }
+            .feature-col { display: block !important; width: 100% !important; padding: 0 0 12px 0 !important; }
+            .feature-td { width: 100% !important; display: block !important; }
+            .card-padding { padding: 28px 20px !important; }
+            .footer-col { display: block !important; width: 100% !important; padding-bottom: 16px !important; }
+            .footer-pad { padding: 24px 20px !important; }
+            .hide-mobile { display: none !important; }
+            .topbar-pad { padding: 16px 20px !important; }
+        }
+    </style>
+</head>
+<body style="margin:0;padding:0;background-color:#e8e8e8;font-family:'DM Sans',Arial,sans-serif;">
+
+<!-- Outer wrapper -->
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#e8e8e8;">
+<tr>
+<td align="center" style="padding:40px 16px;">
+
+    <!-- Email container -->
+    <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;">
+
+        <!-- ── TOP BAR ── -->
+        <tr>
+            <td style="background:#ffffff;border-bottom:2px solid #7e3285;">
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td class="topbar-pad" style="padding:20px 40px;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td style="font-size:22px;font-weight:700;color:#7e3285;font-family:'DM Sans',Arial,sans-serif;letter-spacing:-0.5px;">
+                                Pro<span style="color:#1a1a1a;">xyo</span>
+                            </td>
+                            <td align="right" class="hide-mobile" style="font-size:11px;font-weight:600;color:#aaa;letter-spacing:1.5px;text-transform:uppercase;font-family:'DM Sans',Arial,sans-serif;">
+                                VÉRIFICATION <strong style="color:#555;">D'EMAIL.</strong>
+                            </td>
+                        </tr>
+                        </table>
+                    </td>
+                </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- ── MAIN CARD ── -->
+        <tr>
+            <td class="card-padding" style="background:#ffffff;padding:48px 48px 40px;">
+
+                <!-- Big title -->
+                <p class="big-title" style="font-size:52px;font-weight:700;color:#7e3285;line-height:1.05;margin:0 0 24px 0;letter-spacing:-1px;font-family:'DM Sans',Arial,sans-serif;">
+                    Confirmez<br>votre email&nbsp;!
+                </p>
+
+                <!-- Intro text -->
+                <p style="font-size:15px;color:#444;line-height:1.7;margin:0 0 36px 0;font-family:'DM Sans',Arial,sans-serif;">
+                    Bonjour <strong>{{ user_name }}</strong>, vous avez inscrit <strong style="color:#7e3285;">{{ company_name }}</strong> sur Proxyo.
+                    Pour activer votre compte et accéder à toutes les fonctionnalités, confirmez votre adresse <strong>{{ user_email }}</strong> en un clic.
+                </p>
+
+                <!-- ── FEATURE CARDS (table 3 colonnes) ── -->
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:36px;">
+                <tr>
+                    <!-- Card 1 -->
+                    <td class="feature-td" valign="top" width="32%" style="padding-right:8px;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td style="background:#f7f3fb;border:1px solid #ead8f5;border-radius:10px;padding:20px 14px;text-align:center;">
+                                <i class="fi fi-rs-user" style="font-size:26px;color:#7e3285;display:block;margin-bottom:8px;"></i>
+                                <p style="font-size:13px;font-weight:700;color:#7e3285;margin:0 0 5px 0;font-family:'DM Sans',Arial,sans-serif;">Votre compte</p>
+                                <p style="font-size:12px;color:#777;margin:0;line-height:1.5;font-family:'DM Sans',Arial,sans-serif;">Gérez votre espace et vos préférences</p>
+                            </td>
+                        </tr>
+                        </table>
+                    </td>
+                    <!-- Card 2 -->
+                    <td class="feature-td" valign="top" width="32%" style="padding:0 4px;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td style="background:#f7f3fb;border:1px solid #ead8f5;border-radius:10px;padding:20px 14px;text-align:center;">
+                                <i class="fi fi-rs-star" style="font-size:26px;color:#7e3285;display:block;margin-bottom:8px;"></i>
+                                <p style="font-size:13px;font-weight:700;color:#7e3285;margin:0 0 5px 0;font-family:'DM Sans',Arial,sans-serif;">Fonctionnalités</p>
+                                <p style="font-size:12px;color:#777;margin:0;line-height:1.5;font-family:'DM Sans',Arial,sans-serif;">Accédez à toutes les fonctionnalités Proxyo</p>
+                            </td>
+                        </tr>
+                        </table>
+                    </td>
+                    <!-- Card 3 -->
+                    <td class="feature-td" valign="top" width="32%" style="padding-left:8px;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td style="background:#f7f3fb;border:1px solid #ead8f5;border-radius:10px;padding:20px 14px;text-align:center;">
+                                <i class="fi fi-rs-shield-check" style="font-size:26px;color:#7e3285;display:block;margin-bottom:8px;"></i>
+                                <p style="font-size:13px;font-weight:700;color:#7e3285;margin:0 0 5px 0;font-family:'DM Sans',Arial,sans-serif;">Sécurité</p>
+                                <p style="font-size:12px;color:#777;margin:0;line-height:1.5;font-family:'DM Sans',Arial,sans-serif;">Votre compte protégé et sécurisé</p>
+                            </td>
+                        </tr>
+                        </table>
+                    </td>
+                </tr>
+                </table>
+
+                <!-- ── CTA BUTTON ── -->
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" style="margin-bottom:16px;">
+                <tr>
+                    <td style="border-radius:6px;background:#7e3285;">
+                        <a href="{{ verification_url }}" style="display:inline-block;background:#7e3285;color:#fff;font-family:'DM Sans',Arial,sans-serif;font-size:15px;font-weight:600;padding:15px 36px;border-radius:6px;text-decoration:none;letter-spacing:0.2px;">
+                            Vérifier mon email
+                        </a>
+                    </td>
+                </tr>
+                </table>
+
+                <!-- Expiry -->
+                <p style="font-size:12.5px;color:#aaa;margin:0 0 32px 0;font-family:'DM Sans',Arial,sans-serif;">
+                    Ce lien expire dans <strong style="color:#7e3285;">{{ expiry_hours }}h</strong>
+                </p>
+
+                <!-- Divider -->
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:24px;">
+                <tr><td style="border-top:1px solid #efefef;font-size:0;line-height:0;">&nbsp;</td></tr>
+                </table>
+
+                <!-- Body text -->
+                <p style="font-size:14px;color:#555;line-height:1.7;margin:0 0 14px 0;font-family:'DM Sans',Arial,sans-serif;">
+                    Si vous avez des questions, consultez notre <a href="#" style="color:#7e3285;font-weight:600;">documentation</a> ou <a href="#" style="color:#7e3285;font-weight:600;">contactez notre support</a>.
+                </p>
+                <p style="font-size:13px;color:#888;line-height:1.7;font-style:italic;margin:0 0 24px 0;font-family:'DM Sans',Arial,sans-serif;">
+                    Pour toute assistance immédiate, connectez-vous à votre compte Proxyo et utilisez le chat en direct.
+                </p>
+
+                <!-- Security note -->
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:20px;">
+                <tr>
+                    <td style="background:#f7f3fb;border-left:3px solid #7e3285;border-radius:0 6px 6px 0;padding:12px 16px;">
+                        <p style="font-size:12.5px;color:#777;line-height:1.5;margin:0;font-family:'DM Sans',Arial,sans-serif;">
+                            🔒 Si vous n'êtes pas à l'origine de cette demande, ignorez cet email. Votre compte ne sera pas activé.
+                        </p>
+                    </td>
+                </tr>
+                </table>
+
+                <!-- Link fallback -->
+                <p style="font-size:11.5px;color:#bbb;margin:0 0 24px 0;font-family:'DM Sans',Arial,sans-serif;">
+                    Ou copiez ce lien dans votre navigateur :<br>
+                    <a href="{{ verification_url }}" style="color:#7e3285;opacity:0.7;word-break:break-all;">{{ verification_url }}</a>
+                </p>
+
+                <!-- Divider -->
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:20px;">
+                <tr><td style="border-top:1px solid #efefef;font-size:0;line-height:0;">&nbsp;</td></tr>
+                </table>
+
+                <!-- Signature -->
+                <p style="font-size:14px;color:#555;margin:0 0 2px 0;font-family:'DM Sans',Arial,sans-serif;">Cordialement,</p>
+                <p style="font-size:14px;color:#888;font-style:italic;margin:0;font-family:'DM Sans',Arial,sans-serif;">L'équipe Proxyo</p>
+
+            </td>
+        </tr>
+
+        <!-- ── FOOTER LINKS ── -->
+        <tr>
+            <td class="footer-pad" style="background:#ffffff;border-top:1px solid #e8e8e8;padding:28px 48px;">
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td class="footer-col" valign="top" width="50%" style="padding-right:20px;">
+                        <p style="font-size:12px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.8px;margin:0 0 10px 0;font-family:'DM Sans',Arial,sans-serif;">Liens utiles</p>
+                        <a href="#" style="display:block;font-size:12.5px;color:#7e3285;margin-bottom:5px;font-weight:500;font-family:'DM Sans',Arial,sans-serif;">FAQ</a>
+                        <a href="#" style="display:block;font-size:12.5px;color:#7e3285;margin-bottom:5px;font-weight:500;font-family:'DM Sans',Arial,sans-serif;">Guide de démarrage</a>
+                        <a href="#" style="display:block;font-size:12.5px;color:#7e3285;font-weight:500;font-family:'DM Sans',Arial,sans-serif;">Documentation</a>
+                    </td>
+                    <td class="footer-col" valign="top" width="50%">
+                        <p style="font-size:12px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.8px;margin:0 0 10px 0;font-family:'DM Sans',Arial,sans-serif;">Support</p>
+                        <a href="#" style="display:block;font-size:12.5px;color:#7e3285;margin-bottom:5px;font-weight:500;font-family:'DM Sans',Arial,sans-serif;">Contacter le support</a>
+                        <a href="#" style="display:block;font-size:12.5px;color:#7e3285;font-weight:500;font-family:'DM Sans',Arial,sans-serif;">Signaler un problème</a>
+                    </td>
+                </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- ── BOTTOM BAR ── -->
+        <tr>
+            <td style="background:#f5f5f5;border-top:1px solid #e0e0e0;padding:18px 48px;text-align:center;">
+                <p style="font-size:11px;color:#aaa;line-height:1.7;margin:0;font-family:'DM Sans',Arial,sans-serif;">
+                    Pour ne plus recevoir ces emails, modifiez vos <a href="#" style="color:#7e3285;font-weight:600;">préférences</a>.<br>
+                    © 2026 Proxyo · Tous droits réservés
+                </p>
+            </td>
+        </tr>
+
+    </table>
+    <!-- /Email container -->
+
+</td>
+</tr>
+</table>
+<!-- /Outer wrapper -->
+
+</body>
+</html>

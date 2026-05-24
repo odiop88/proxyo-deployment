@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Confirmation de paiement - Proxyo</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style type="text/css">
+        body, table, td, a { -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+        table, td { margin: 0; padding: 0; }
+        img { -ms-interpolation-mode: bicubic; border: 0; outline: none; }
+        body { margin: 0 !important; padding: 0 !important; background-color: #e8e8e8; }
+        a { color: #7e3285; text-decoration: none; }
+        @media screen and (max-width: 600px) {
+            .email-container { width: 100% !important; }
+            .big-title { font-size: 36px !important; line-height: 1.1 !important; }
+            .card-padding { padding: 28px 20px !important; }
+            .footer-pad { padding: 24px 20px !important; }
+            .hide-mobile { display: none !important; }
+            .topbar-pad { padding: 16px 20px !important; }
+        }
+    </style>
+</head>
+<body style="margin:0;padding:0;background-color:#e8e8e8;font-family:'DM Sans',Arial,sans-serif;">
+
+<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:#e8e8e8;">
+<tr>
+<td align="center" style="padding:40px 16px;">
+
+    <table class="email-container" role="presentation" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width:600px;width:100%;">
+
+        <!-- TOP BAR -->
+        <tr>
+            <td style="background:#ffffff;border-bottom:2px solid #7e3285;">
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td class="topbar-pad" style="padding:20px 40px;">
+                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td style="font-size:22px;font-weight:700;color:#7e3285;font-family:'DM Sans',Arial,sans-serif;letter-spacing:-0.5px;">
+                                Pro<span style="color:#1a1a1a;">xyo</span>
+                            </td>
+                            <td align="right" class="hide-mobile" style="font-size:11px;font-weight:600;color:#aaa;letter-spacing:1.5px;text-transform:uppercase;font-family:'DM Sans',Arial,sans-serif;">
+                                PAIEMENT <strong style="color:#555;">CONFIRMÉ.</strong>
+                            </td>
+                        </tr>
+                        </table>
+                    </td>
+                </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- MAIN CARD -->
+        <tr>
+            <td class="card-padding" style="background:#ffffff;padding:48px 48px 40px;">
+
+                <!-- Big title -->
+                <p class="big-title" style="font-size:48px;font-weight:700;color:#7e3285;line-height:1.05;margin:0 0 24px 0;letter-spacing:-1px;font-family:'DM Sans',Arial,sans-serif;">
+                    Paiement<br>confirmé&nbsp;!
+                </p>
+
+                <!-- Intro -->
+                <p style="font-size:15px;color:#444;line-height:1.7;margin:0 0 32px 0;font-family:'DM Sans',Arial,sans-serif;">
+                    Bonjour <strong>{{ user_name }}</strong>,<br>
+                    Votre paiement pour la mission <strong>"{{ mission_title }}"</strong>
+                    avec <strong style="color:#7e3285;">{{ prestataire_name }}</strong> a bien été enregistré.
+                </p>
+
+                <!-- Récapitulatif financier -->
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:32px;border:1px solid #ead8f5;border-radius:10px;overflow:hidden;">
+                    <tr>
+                        <td style="background:#f7f3fb;padding:16px 24px;border-bottom:1px solid #ead8f5;">
+                            <p style="font-size:12px;font-weight:700;color:#7e3285;text-transform:uppercase;letter-spacing:0.8px;margin:0;font-family:'DM Sans',Arial,sans-serif;">
+                                Récapitulatif de facturation
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:0;">
+                            <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td style="padding:14px 24px;border-bottom:1px solid #f0f0f0;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td style="font-size:14px;color:#555;font-family:'DM Sans',Arial,sans-serif;">Mission</td>
+                                            <td align="right" style="font-size:14px;font-weight:600;color:#1a1a1a;font-family:'DM Sans',Arial,sans-serif;">{{ mission_title }}</td>
+                                        </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:14px 24px;border-bottom:1px solid #f0f0f0;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td style="font-size:14px;color:#555;font-family:'DM Sans',Arial,sans-serif;">Prestataire</td>
+                                            <td align="right" style="font-size:14px;font-weight:600;color:#1a1a1a;font-family:'DM Sans',Arial,sans-serif;">{{ prestataire_name }}</td>
+                                        </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:14px 24px;border-bottom:1px solid #f0f0f0;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td style="font-size:14px;color:#555;font-family:'DM Sans',Arial,sans-serif;">Montant HT</td>
+                                            <td align="right" style="font-size:14px;font-weight:600;color:#1a1a1a;font-family:'DM Sans',Arial,sans-serif;">{{ proposed_price }} €</td>
+                                        </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                {% if tva_rate %}
+                                <tr>
+                                    <td style="padding:14px 24px;border-bottom:1px solid #f0f0f0;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td style="font-size:14px;color:#555;font-family:'DM Sans',Arial,sans-serif;">TVA ({{ tva_rate }}%)</td>
+                                            <td align="right" style="font-size:14px;font-weight:600;color:#1a1a1a;font-family:'DM Sans',Arial,sans-serif;">{{ tva_amount }} €</td>
+                                        </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                {% endif %}
+                                <tr>
+                                    <td style="padding:14px 24px;border-bottom:1px solid #f0f0f0;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td style="font-size:14px;color:#555;font-family:'DM Sans',Arial,sans-serif;">Frais de service</td>
+                                            <td align="right" style="font-size:14px;font-weight:600;color:#1a1a1a;font-family:'DM Sans',Arial,sans-serif;">{{ platform_fee }} €</td>
+                                        </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:16px 24px;background:#f7f3fb;">
+                                        <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                                        <tr>
+                                            <td style="font-size:15px;font-weight:700;color:#7e3285;font-family:'DM Sans',Arial,sans-serif;">Total payé</td>
+                                            <td align="right" style="font-size:18px;font-weight:700;color:#7e3285;font-family:'DM Sans',Arial,sans-serif;">{{ total_client_pays }} €</td>
+                                        </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+                <!-- Info mission -->
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:32px;">
+                <tr>
+                    <td style="background:#fff8e1;border-left:3px solid #f9a825;border-radius:0 6px 6px 0;padding:14px 18px;">
+                        <p style="font-size:13px;color:#555;line-height:1.6;margin:0;font-family:'DM Sans',Arial,sans-serif;">
+                            La mission est maintenant <strong>en cours</strong>. Le prestataire a été notifié et peut démarrer les travaux.
+                        </p>
+                    </td>
+                </tr>
+                </table>
+
+                <!-- Divider -->
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom:24px;">
+                <tr><td style="border-top:1px solid #efefef;font-size:0;line-height:0;">&nbsp;</td></tr>
+                </table>
+
+                <!-- Signature -->
+                <p style="font-size:14px;color:#555;margin:0 0 2px 0;font-family:'DM Sans',Arial,sans-serif;">Cordialement,</p>
+                <p style="font-size:14px;color:#888;font-style:italic;margin:0;font-family:'DM Sans',Arial,sans-serif;">L'équipe Proxyo</p>
+
+            </td>
+        </tr>
+
+        <!-- FOOTER -->
+        <tr>
+            <td class="footer-pad" style="background:#ffffff;border-top:1px solid #e8e8e8;padding:28px 48px;">
+                <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <td valign="top" width="50%" style="padding-right:20px;">
+                        <p style="font-size:12px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.8px;margin:0 0 10px 0;font-family:'DM Sans',Arial,sans-serif;">Liens utiles</p>
+                        <a href="#" style="display:block;font-size:12.5px;color:#7e3285;margin-bottom:5px;font-weight:500;font-family:'DM Sans',Arial,sans-serif;">FAQ</a>
+                        <a href="#" style="display:block;font-size:12.5px;color:#7e3285;font-weight:500;font-family:'DM Sans',Arial,sans-serif;">Documentation</a>
+                    </td>
+                    <td valign="top" width="50%">
+                        <p style="font-size:12px;font-weight:700;color:#333;text-transform:uppercase;letter-spacing:0.8px;margin:0 0 10px 0;font-family:'DM Sans',Arial,sans-serif;">Support</p>
+                        <a href="#" style="display:block;font-size:12.5px;color:#7e3285;margin-bottom:5px;font-weight:500;font-family:'DM Sans',Arial,sans-serif;">Contacter le support</a>
+                        <a href="#" style="display:block;font-size:12.5px;color:#7e3285;font-weight:500;font-family:'DM Sans',Arial,sans-serif;">Signaler un problème</a>
+                    </td>
+                </tr>
+                </table>
+            </td>
+        </tr>
+
+        <!-- BOTTOM BAR -->
+        <tr>
+            <td style="background:#f5f5f5;border-top:1px solid #e0e0e0;padding:18px 48px;text-align:center;">
+                <p style="font-size:11px;color:#aaa;line-height:1.7;margin:0;font-family:'DM Sans',Arial,sans-serif;">
+                    © 2026 Proxyo · Tous droits réservés
+                </p>
+            </td>
+        </tr>
+
+    </table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>
