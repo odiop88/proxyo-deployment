@@ -1,0 +1,77 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: proxyo_prod
+      POSTGRES_USER: proxyo_prod_user
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - proxyo_prod_postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./proxyo-backend
+      dockerfile: Dockerfile.prod
+    restart: unless-stopped
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
+      DEBUG: "False"
+
+      ALLOWED_HOSTS: api.proxyo.com,localhost,127.0.0.1
+      FRONTEND_URL: https://www.proxyo.com
+
+      CORS_ALLOW_ALL_ORIGINS: "False"
+      CORS_ALLOWED_ORIGINS: https://www.proxyo.com,https://proxyo.com
+      CSRF_TRUSTED_ORIGINS: https://www.proxyo.com,https://proxyo.com,https://api.proxyo.com
+
+      DB_NAME: proxyo_prod
+      DB_USER: proxyo_prod_user
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: db
+      DB_PORT: 5432
+
+      REDIS_HOST: redis
+      REDIS_PORT: 6379
+
+      EMAIL_HOST_USER: ${EMAIL_HOST_USER}
+      EMAIL_HOST_PASSWORD: ${EMAIL_HOST_PASSWORD}
+
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_PUBLISHABLE_KEY: ${STRIPE_PUBLISHABLE_KEY}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET}
+
+      NGROK_AUTHTOKEN: ""
+    command: daphne -b 0.0.0.0 -p 8000 Proxyo_back.asgi:application
+    volumes:
+      - proxyo_prod_static:/app/staticfiles
+      - proxyo_prod_media:/app/media
+    depends_on:
+      - db
+      - redis
+    expose:
+      - "8000"
+
+  frontend:
+    build:
+      context: ./proxyo-frontend
+      dockerfile: Dockerfile.prod
+      args:
+        VITE_API_BASE_URL: https://api.proxyo.com/api
+        VITE_WS_BASE_URL: wss://api.proxyo.com/ws
+        VITE_STRIPE_PUBLISHABLE_KEY: ${VITE_STRIPE_PUBLISHABLE_KEY}
+        VITE_APP_ENV: production
+    restart: unless-stopped
+    depends_on:
+      - backend
+    expose:
+      - "80"
+
+volumes:
+  proxyo_prod_postgres_data:
+  proxyo_prod_media:
+  proxyo_prod_static:
