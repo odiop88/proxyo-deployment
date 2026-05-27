@@ -21,3 +21,4 @@ channels-redis
 daphne
 django-ngrok
 django-filter
+whitenoise
